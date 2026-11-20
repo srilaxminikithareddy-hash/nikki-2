@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Space+Grotesk:wght@600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;min-height:100vh;}body{overscroll-behavior-y:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-bright": "#353943", "primary": "#c0c1ff", "on-error-container": "#ffdad6", "on-primary-container": "#0d0096", "on-tertiary": "#003640", "background": "#0f131c", "on-surface": "#dfe2ef", "inverse-primary": "#494bd6", "inverse-surface": "#dfe2ef", "error-container": "#93000a", "primary-container": "#8083ff", "secondary-fixed": "#e9ddff", "on-tertiary-fixed": "#001f26", "surface-container-lowest": "#0a0e17", "on-surface-variant": "#c7c4d7", "tertiary-container": "#009eb9", "outline": "#908fa0", "surface-variant": "#31353f", "on-secondary": "#3c0091", "on-error": "#690005", "outline-variant": "#464554", "surface-container-low": "#181b25", "inverse-on-surface": "#2c303a", "surface-container": "#1c1f29", "tertiary-fixed-dim": "#4cd7f6", "on-tertiary-container": "#002f38", "error": "#ffb4ab", "surface-tint": "#c0c1ff", "secondary-fixed-dim": "#d0bcff", "on-secondary-container": "#c4abff", "on-secondary-fixed": "#23005c", "secondary-container": "#571bc1", "secondary": "#d0bcff", "surface": "#0f131c", "on-secondary-fixed-variant": "#5516be", "surface-container-high": "#262a34", "on-primary": "#1000a9", "primary-fixed": "#e1e0ff", "primary-fixed-dim": "#c0c1ff", "on-primary-fixed": "#07006c", "on-background": "#dfe2ef", "surface-container-highest": "#31353f", "surface-dim": "#0f131c", "tertiary": "#4cd7f6", "tertiary-fixed": "#acedff", "on-primary-fixed-variant": "#2f2ebe", "on-tertiary-fixed-variant": "#004e5c" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin-tablet": "1.5rem", "margin-desktop": "2rem", "space-md": "0.75rem", "margin": "1rem", "space-2xl": "2rem", "space-sm": "0.5rem", "gutter": "1rem", "space-lg": "1rem", "gutter-sm": "0.75rem", "space-xl": "1.5rem", "space-xs": "0.25rem" }, "fontFamily": { "label-md": ["JetBrains Mono"], "body-lg": ["Plus Jakarta Sans"], "headline-xl": ["Space Grotesk"], "headline-xl-mobile": ["Space Grotesk"], "headline-md": ["Space Grotesk"], "headline-lg": ["Space Grotesk"], "body-md": ["Plus Jakarta Sans"], "headline-lg-mobile": ["Space Grotesk"], "body-sm": ["Plus Jakarta Sans"], "label-sm": ["JetBrains Mono"], "label-lg": ["JetBrains Mono"] }, "fontSize": { "label-md": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "500" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "500" }], "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.03em", "fontWeight": "700" }], "headline-xl-mobile": ["30px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-md": ["20px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-lg": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-lg-mobile": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "label-sm": ["10px", { "lineHeight": "12px", "letterSpacing": "0.05em", "fontWeight": "500" }], "label-lg": ["13px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "600" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface font-body-md text-body-md antialiased min-h-screen flex flex-col selection:bg-primary-container selection:text-on-primary"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_12px_rgba(0,0,0,0.4)]"><div class="h-20 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm"><div class="w-11 h-11 rounded-xl bg-surface-container-high flex items-center justify-center relative overflow-hidden"><div class="absolute inset-0 bg-primary/10 animate-pulse"></div><span class="material-symbols-outlined text-tertiary text-[22px] relative z-10">bolt</span></div><div class="flex flex-col"><div class="flex items-center gap-space-xs"><span class="font-headline-md text-headline-md font-bold tracking-tight text-on-surface">CampusPulse</span><span class="w-2 h-2 rounded-full bg-tertiary shadow-[0_0_8px_#4cd7f6]"></span></div><span class="font-label-sm text-label-sm text-tertiary tracking-wider uppercase">Live Campus Node</span></div></div><div class="flex items-center gap-space-xs"><div class="flex items-center bg-surface-container-low/90 rounded-full p-0.5 backdrop-blur-md"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-2 text-tertiary text-[14px] pointer-events-none">verified_user</span><select aria-label="Select Role Context" class="appearance-none bg-surface-container-high text-tertiary font-label-sm text-label-sm font-semibold pl-6 pr-4 py-1.5 rounded-full cursor-pointer focus:outline-none min-h-[44px]"><option selected="" value="student">STUDENT</option><option value="organizer">ORGANIZER</option><option value="admin">ADMIN</option></select></div><div class="relative flex items-center"><select aria-label="Mock User Identifier" class="appearance-none bg-transparent text-on-surface-variant font-label-sm text-label-sm pl-2 pr-5 py-1.5 cursor-pointer focus:outline-none min-h-[44px]"><option selected="" value="usr_9f4e">usr_9f4e (Alex C.)</option><option value="usr_3a1b">usr_3a1b (Jordan L.)</option><option value="usr_7c8d">usr_7c8d (Elena V.)</option></select><span class="material-symbols-outlined absolute right-1 text-on-surface-variant text-[14px] pointer-events-none">expand_more</span></div></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0 shadow-[0_0_12px_rgba(192,193,255,0.35)]"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-20 pb-28 px-margin bg-surface flex-1 min-h-screen"><div class="flex flex-col w-full gap-space-lg select-none">
+<!-- Dynamic Atmospheric Glow Backgrounds -->
+<div class="fixed -top-24 -left-20 w-72 h-72 bg-primary-container/15 rounded-full blur-[90px] pointer-events-none -z-10"></div>
+<div class="fixed top-1/3 -right-20 w-80 h-80 bg-tertiary/10 rounded-full blur-[100px] pointer-events-none -z-10"></div>
+<!-- Role Context Subheader Banner -->
+<section class="w-full bg-surface-container/80 backdrop-blur-xl rounded-xl p-space-md shadow-md flex flex-col gap-space-sm relative overflow-hidden">
+<div class="absolute -right-8 -bottom-8 w-28 h-28 bg-primary/10 rounded-full blur-2xl pointer-events-none"></div>
+<div class="flex items-center justify-between gap-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-pulse shadow-[0_0_8px_#4cd7f6]"></span>
+<span class="font-label-sm text-label-sm text-tertiary uppercase tracking-wider">Active Dev Persona</span>
+</div>
+<div class="flex items-center gap-1 bg-surface-container-highest px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[13px] text-primary">bolt</span>
+<span class="font-label-sm text-label-sm text-primary">Zero-Auth Swapper</span>
+</div>
+</div>
+<!-- Active Persona Switcher Row -->
+<div class="grid grid-cols-1 gap-2 sm:grid-cols-2 pt-1">
+<!-- Role Switcher Capsule -->
+<div class="relative bg-surface-container-high rounded-lg p-space-xs flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-2 pl-1">
+<div class="w-7 h-7 rounded-md bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-[16px]">school</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant leading-none">Role Context</span>
+<span class="font-label-md text-label-md text-secondary font-semibold">STUDENT (Tier 1)</span>
+</div>
+</div>
+<button class="bg-surface-bright/70 hover:bg-surface-bright text-on-surface px-2.5 py-1 rounded-md font-label-sm text-label-sm flex items-center gap-1 transition-all active:scale-95" id="role-toggle-btn">
+<span>Switch</span>
+<span class="material-symbols-outlined text-[14px]">swap_horiz</span>
+</button>
+</div>
+<!-- Active Database User Capsule -->
+<div class="relative bg-surface-container-high rounded-lg p-space-xs flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-2 pl-1 min-w-0">
+<div class="w-7 h-7 rounded-md bg-primary-container flex items-center justify-center text-on-primary-container flex-shrink-0">
+<span class="material-symbols-outlined text-[16px]">fingerprint</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-tertiary truncate">usr_8b2c · maya.lin@campus.edu</span>
+<span class="font-body-sm text-body-sm font-semibold text-on-surface truncate">Maya Lin (Sophomore · CS)</span>
+</div>
+</div>
+<button class="bg-surface-bright/70 hover:bg-surface-bright text-on-surface p-1 rounded-md flex items-center justify-center transition-all active:scale-95 flex-shrink-0" id="user-inspect-btn">
+<span class="material-symbols-outlined text-[16px]">expand_more</span>
+</button>
+</div>
+</div>
+<!-- Micro hint banner -->
+<div class="flex items-center justify-between pt-1 text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px] text-tertiary">info</span>
+        Instant Role Switch - No Login Required
+      </span>
+<span class="text-tertiary-fixed-dim font-semibold">DB: postgres.campus_live</span>
+</div>
+</section>
+<!-- Live Pulse Stats Rail -->
+<section class="grid grid-cols-3 gap-2">
+<div class="bg-surface-container-low rounded-xl p-space-sm flex flex-col items-start shadow-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Open Spots</span>
+<div class="flex items-baseline gap-1 mt-0.5">
+<span class="font-headline-md text-headline-md font-bold text-on-surface">348</span>
+<span class="font-label-sm text-label-sm text-tertiary font-semibold">Live</span>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-xl p-space-sm flex flex-col items-start shadow-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">RSVP Rate</span>
+<div class="flex items-baseline gap-1 mt-0.5">
+<span class="font-headline-md text-headline-md font-bold text-secondary">94%</span>
+<span class="font-label-sm text-label-sm text-secondary-fixed">Cap</span>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-xl p-space-sm flex flex-col items-start shadow-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">My Passes</span>
+<div class="flex items-baseline gap-1 mt-0.5">
+<span class="font-headline-md text-headline-md font-bold text-primary" id="user-badge-count">2</span>
+<span class="font-label-sm text-label-sm text-primary-fixed">Active</span>
+</div>
+</div>
+</section>
+<!-- Horizontal Scrollable Tag Categories -->
+<section class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-headline-md text-headline-md text-on-surface">Campus Vibes</span>
+<span class="font-label-sm text-label-sm text-tertiary uppercase tracking-wider">Scrollable Tags</span>
+</div>
+<div class="flex gap-2 overflow-x-auto pb-1 scrollbar-none snap-x -mx-margin px-margin">
+<button class="snap-start flex-shrink-0 bg-primary text-on-primary px-3.5 py-1.5 rounded-full font-label-md text-label-md font-semibold shadow-sm transition-all active:scale-95 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px]">grid_view</span>
+        All Events (14)
+      </button>
+<button class="snap-start flex-shrink-0 bg-surface-container-high text-on-surface px-3.5 py-1.5 rounded-full font-label-md text-label-md transition-all active:scale-95 flex items-center gap-1.5 hover:bg-surface-bright">
+<span class="material-symbols-outlined text-[14px] text-tertiary">code</span>
+        Tech Hackathons
+      </button>
+<button class="snap-start flex-shrink-0 bg-surface-container-high text-on-surface px-3.5 py-1.5 rounded-full font-label-md text-label-md transition-all active:scale-95 flex items-center gap-1.5 hover:bg-surface-bright">
+<span class="material-symbols-outlined text-[14px] text-secondary">nightlife</span>
+        Cultural Nights
+      </button>
+<button class="snap-start flex-shrink-0 bg-surface-container-high text-on-surface px-3.5 py-1.5 rounded-full font-label-md text-label-md transition-all active:scale-95 flex items-center gap-1.5 hover:bg-surface-bright">
+<span class="material-symbols-outlined text-[14px] text-primary">sports_esports</span>
+        Sports
+      </button>
+<button class="snap-start flex-shrink-0 bg-surface-container-high text-on-surface px-3.5 py-1.5 rounded-full font-label-md text-label-md transition-all active:scale-95 flex items-center gap-1.5 hover:bg-surface-bright">
+<span class="material-symbols-outlined text-[14px] text-tertiary">psychology</span>
+        Workshops
+      </button>
+</div>
+</section>
+<!-- Featured Hero Event Card: HackCampus 2025 -->
+<section class="relative bg-surface-container/90 backdrop-blur-2xl rounded-xl overflow-hidden shadow-xl flex flex-col">
+<!-- Card Media Visual -->
+<div class="relative w-full h-44 overflow-hidden">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 hover:scale-105" data-alt="Futuristic cyber college campus hackathon lab at midnight, glowing neon cyan and purple ambient server lights, diverse young engineers collaborating intensely over glowing monitors, high contrast cyberpunk dark academia atmosphere." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC2IyTjO74NWEJ3koNcJex4syG_AfuFy8l5uR1y4nzcLTKxlis4rcbV1sEfKajIWdnM6DaJodEklVRY2vEEjFOfTHZcZ4T61QObkHyu2K-FzpSmIrMeFu8K6uC7lPNWSfy0EqgNfyjmnzcqn2IpKWbVed7HS69UpmElHlWJTvyD_FZqsaC-52svrfgsOe-Oqi1djSlc6wIhHInyQiwYgTazoXIed1UBiC8BztVhofSB')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-surface-container/40 to-transparent"></div>
+<!-- Top Badge Overlay -->
+<div class="absolute top-3 left-3 flex items-center gap-1.5 bg-surface-container-lowest/80 backdrop-blur-md px-2.5 py-1 rounded-full">
+<span class="material-symbols-outlined text-tertiary text-[14px]">local_fire_department</span>
+<span class="font-label-sm text-label-sm text-tertiary font-bold tracking-wide uppercase">Featured Drop</span>
+</div>
+<!-- Live Countdown Pill -->
+<div class="absolute top-3 right-3 flex items-center gap-1 bg-surface-container-lowest/80 backdrop-blur-md px-2.5 py-1 rounded-full text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[14px]">schedule</span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold" id="hack-countdown">03d : 14h : 22m</span>
+</div>
+</div>
+<!-- Hero Card Details -->
+<div class="p-space-md flex flex-col gap-space-sm -mt-2 relative z-10">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-tertiary shadow-[0_0_6px_#4cd7f6]"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono">ORG_NODE: #org_devs</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary-fixed bg-secondary-container px-2 py-0.5 rounded-full font-semibold">TICKET FREE</span>
+</div>
+<div class="flex flex-col">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-on-surface tracking-tight leading-snug">
+          HackCampus 2025: AI Buildathon
+        </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mt-1">
+          48-hour neural sprint. Build autonomous campus agents, hardware synths, and generative tools. $10k pool + fast-track angel intros.
+        </p>
+</div>
+<!-- Capacity Visual Progress Rail -->
+<div class="flex flex-col gap-1.5 mt-1">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-on-surface-variant">Capacity Quota</span>
+<span class="text-on-surface font-semibold font-mono"><span id="hack-rsvp-count">142</span> / 200 Spots Filled</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-high overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary-container via-primary to-tertiary rounded-full w-[71%] transition-all duration-500 shadow-[0_0_12px_rgba(76,215,246,0.6)]" id="hack-progress-bar"></div>
+</div>
+</div>
+<!-- Action Footer -->
+<div class="pt-2 flex items-center gap-space-sm">
+<button class="flex-1 min-h-[46px] bg-gradient-to-r from-primary to-secondary text-on-primary rounded-xl font-body-lg text-body-lg font-bold flex items-center justify-center gap-2 shadow-[0_4px_20px_rgba(192,193,255,0.25)] transition-all active:scale-95 hover:opacity-95" id="hero-rsvp-btn">
+<span class="material-symbols-outlined text-[20px]">confirmation_number</span>
+<span id="hero-btn-text">One-Tap RSVP</span>
+</button>
+<button class="w-11 h-11 rounded-xl bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-all active:scale-90 flex-shrink-0" id="share-hero-btn">
+<span class="material-symbols-outlined text-[20px]">ios_share</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Feed Section: Upcoming Events Database -->
+<section class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-headline-md text-headline-md text-on-surface font-bold">Upcoming Roster</span>
+<span class="bg-surface-container-high text-tertiary font-label-sm text-label-sm px-2 py-0.5 rounded-full font-mono">/api/events</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Sync: Live</span>
+</div>
+<!-- Event 1: Neon Beats Campus Rave -->
+<article class="bg-surface-container-low rounded-xl p-space-md shadow-md flex flex-col gap-space-sm relative overflow-hidden transition-all hover:bg-surface-container">
+<div class="flex items-start justify-between gap-2">
+<div class="flex flex-col gap-1 min-w-0">
+<div class="flex items-center gap-2">
+<span class="bg-surface-container-highest text-secondary-fixed font-label-sm text-label-sm px-2 py-0.5 rounded-full font-semibold">CULTURE</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono">ORG: #sound_collective</span>
+</div>
+<h3 class="font-headline-md text-headline-md font-semibold text-on-surface truncate">Neon Beats Campus Rave</h3>
+<span class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-tertiary">location_on</span>
+            Quad Underground Vaults · Fri, 10:00 PM
+          </span>
+</div>
+<div class="flex flex-col items-end flex-shrink-0">
+<span class="bg-primary/10 text-primary font-label-sm text-label-sm px-2.5 py-1 rounded-full font-mono font-semibold">OPEN</span>
+</div>
+</div>
+<!-- Capacity Gauge & Action -->
+<div class="flex items-center justify-between pt-1 gap-space-sm">
+<div class="flex flex-col gap-1 flex-1">
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant font-mono">
+<span>Quota</span>
+<span class="text-on-surface" id="rave-quota-label">450 / 500</span>
+</div>
+<div class="w-full h-1.5 rounded-full bg-surface-container-high overflow-hidden">
+<div class="h-full bg-primary rounded-full w-[90%]" id="rave-progress"></div>
+</div>
+</div>
+<button class="bg-primary text-on-primary font-label-md text-label-md font-bold px-4 py-2 rounded-lg transition-all active:scale-95 flex items-center gap-1 flex-shrink-0" id="rave-register-btn">
+<span>Register</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+</article>
+<!-- Event 2: Design Sprint 3.0 (Capacity 60/60 -> Waitlist Conflict Simulation) -->
+<article class="bg-surface-container-low rounded-xl p-space-md shadow-md flex flex-col gap-space-sm relative overflow-hidden transition-all">
+<div class="flex items-start justify-between gap-2">
+<div class="flex flex-col gap-1 min-w-0">
+<div class="flex items-center gap-2">
+<span class="bg-surface-container-highest text-tertiary-fixed font-label-sm text-label-sm px-2 py-0.5 rounded-full font-semibold">DESIGN</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono">ORG: #ux_guild</span>
+</div>
+<h3 class="font-headline-md text-headline-md font-semibold text-on-surface truncate">Design Sprint 3.0: Spatial UI</h3>
+<span class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-tertiary">location_on</span>
+            Media Lab Studio 4B · Sat, 1:00 PM
+          </span>
+</div>
+<div class="flex flex-col items-end flex-shrink-0">
+<span class="bg-error-container/30 text-error font-label-sm text-label-sm px-2.5 py-1 rounded-full font-mono font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-error animate-ping"></span>
+            WAITLIST
+          </span>
+</div>
+</div>
+<!-- Capacity Full Meter & 409 Notice -->
+<div class="flex items-center justify-between pt-1 gap-space-sm">
+<div class="flex flex-col gap-1 flex-1">
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant font-mono">
+<span class="text-error font-semibold">HTTP 409 Cap Limit</span>
+<span class="text-error font-bold">60 / 60 Full</span>
+</div>
+<div class="w-full h-1.5 rounded-full bg-surface-container-high overflow-hidden">
+<div class="h-full bg-error rounded-full w-full"></div>
+</div>
+</div>
+<button class="bg-surface-container-highest hover:bg-surface-bright text-on-surface font-label-md text-label-md font-bold px-3.5 py-2 rounded-lg transition-all active:scale-95 flex items-center gap-1 flex-shrink-0" id="design-waitlist-btn">
+<span class="material-symbols-outlined text-[14px] text-error">hourglass_top</span>
+<span id="design-waitlist-text">Join Waitlist</span>
+</button>
+</div>
+</article>
+<!-- Event 3: RoboWars Arena -->
+<article class="bg-surface-container-low rounded-xl p-space-md shadow-md flex flex-col gap-space-sm relative overflow-hidden transition-all hover:bg-surface-container">
+<div class="flex items-start justify-between gap-2">
+<div class="flex flex-col gap-1 min-w-0">
+<div class="flex items-center gap-2">
+<span class="bg-surface-container-highest text-primary font-label-sm text-label-sm px-2 py-0.5 rounded-full font-semibold">ROBOTICS</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono">ORG: #mecha_club</span>
+</div>
+<h3 class="font-headline-md text-headline-md font-semibold text-on-surface truncate">RoboWars Arena: Heavyweights</h3>
+<span class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-tertiary">location_on</span>
+            East Quad Arena · Sun, 4:00 PM
+          </span>
+</div>
+<div class="flex flex-col items-end flex-shrink-0">
+<span class="bg-primary/10 text-primary font-label-sm text-label-sm px-2.5 py-1 rounded-full font-mono font-semibold">OPEN</span>
+</div>
+</div>
+<!-- Capacity Gauge & Action -->
+<div class="flex items-center justify-between pt-1 gap-space-sm">
+<div class="flex flex-col gap-1 flex-1">
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant font-mono">
+<span>Quota</span>
+<span class="text-on-surface" id="robo-quota-label">80 / 100</span>
+</div>
+<div class="w-full h-1.5 rounded-full bg-surface-container-high overflow-hidden">
+<div class="h-full bg-tertiary rounded-full w-[80%]" id="robo-progress"></div>
+</div>
+</div>
+<button class="bg-primary text-on-primary font-label-md text-label-md font-bold px-4 py-2 rounded-lg transition-all active:scale-95 flex items-center gap-1 flex-shrink-0" id="robowars-register-btn">
+<span>Register</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+</article>
+</section>
+<!-- Interactive Feedback Pill / Live Toast Alert -->
+<div class="hidden fixed bottom-20 left-4 right-4 bg-surface-container-highest/95 backdrop-blur-2xl p-space-sm rounded-xl shadow-2xl flex items-center justify-between z-50 transition-all transform duration-300" id="action-toast">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-tertiary/20 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md font-semibold text-on-surface text-sm" id="toast-title">Pass Secured!</span>
+<span class="font-label-sm text-label-sm text-tertiary font-mono" id="toast-desc">POST /api/registrations - 201 CREATED</span>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface p-1" id="toast-dismiss-btn">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<!-- Floating Sticky API Badge (Fixed Bottom Affordance Above Tab Bar) -->
+<aside class="sticky bottom-2 w-full flex justify-center py-1 pointer-events-none z-30">
+<div class="pointer-events-auto bg-surface-container-lowest/90 backdrop-blur-md px-3.5 py-1.5 rounded-full flex items-center gap-2 shadow-[0_4px_16px_rgba(0,0,0,0.6)]">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-pulse shadow-[0_0_8px_#4cd7f6]"></span>
+<span class="font-label-sm text-label-sm text-tertiary font-mono tracking-tight font-medium">
+        API Connected: GET /api/events · POST /api/registrations
+      </span>
+</div>
+</aside>
+</div>
+<script>
+  (function initCampusEvents() {
+    let currentPassCount = 2;
+
+    const heroBtn = document.getElementById('hero-rsvp-btn');
+    const heroBtnText = document.getElementById('hero-btn-text');
+    const heroRsvpCount = document.getElementById('hack-rsvp-count');
+    const heroProgressBar = document.getElementById('hack-progress-bar');
+    const userBadgeCount = document.getElementById('user-badge-count');
+
+    const raveBtn = document.getElementById('rave-register-btn');
+    const raveQuota = document.getElementById('rave-quota-label');
+    const raveProgress = document.getElementById('rave-progress');
+
+    const roboBtn = document.getElementById('robowars-register-btn');
+    const roboQuota = document.getElementById('robo-quota-label');
+    const roboProgress = document.getElementById('robo-progress');
+
+    const waitlistBtn = document.getElementById('design-waitlist-btn');
+    const waitlistText = document.getElementById('design-waitlist-text');
+
+    const toast = document.getElementById('action-toast');
+    const toastTitle = document.getElementById('toast-title');
+    const toastDesc = document.getElementById('toast-desc');
+    const toastDismiss = document.getElementById('toast-dismiss-btn');
+
+    function triggerToast(title, subtitle) {
+      if (!toast) return;
+      toastTitle.textContent = title;
+      toastDesc.textContent = subtitle;
+      toast.classList.remove('hidden');
+      setTimeout(() => {
+        toast.classList.add('hidden');
+      }, 4000);
+    }
+
+    if (toastDismiss) {
+      toastDismiss.addEventListener('click', () => {
+        toast.classList.add('hidden');
+      });
+    }
+
+    // Hero RSVP Button Interaction
+    if (heroBtn) {
+      let isHeroRegistered = false;
+      heroBtn.addEventListener('click', () => {
+        if (!isHeroRegistered) {
+          isHeroRegistered = true;
+          heroBtnText.textContent = "RSVP Confirmed ✓";
+          heroBtn.classList.remove('from-primary', 'to-secondary');
+          heroBtn.classList.add('bg-tertiary', 'text-on-tertiary');
+          heroRsvpCount.textContent = "143";
+          heroProgressBar.style.width = "71.5%";
+          currentPassCount += 1;
+          userBadgeCount.textContent = currentPassCount.toString();
+          triggerToast("HackCampus Pass Issued!", "POST /api/registrations [id: reg_9a12] · 201 CREATED");
+        } else {
+          isHeroRegistered = false;
+          heroBtnText.textContent = "One-Tap RSVP";
+          heroBtn.classList.remove('bg-tertiary', 'text-on-tertiary');
+          heroBtn.classList.add('from-primary', 'to-secondary');
+          heroRsvpCount.textContent = "142";
+          heroProgressBar.style.width = "71%";
+          currentPassCount -= 1;
+          userBadgeCount.textContent = currentPassCount.toString();
+          triggerToast("Registration Cancelled", "DELETE /api/registrations/reg_9a12 · 204 NO_CONTENT");
+        }
+      });
+    }
+
+    // Rave Event Registration Interaction
+    if (raveBtn) {
+      let isRaveReg = false;
+      raveBtn.addEventListener('click', () => {
+        if (!isRaveReg) {
+          isRaveReg = true;
+          raveBtn.innerHTML = "<span>Secured</span><span class='material-symbols-outlined text-[14px]'>check</span>";
+          raveBtn.classList.replace('bg-primary', 'bg-tertiary');
+          raveBtn.classList.replace('text-on-primary', 'text-on-tertiary');
+          raveQuota.textContent = "451 / 500";
+          raveProgress.style.width = "90.2%";
+          currentPassCount += 1;
+          userBadgeCount.textContent = currentPassCount.toString();
+          triggerToast("Neon Beats Entry Stamped", "POST /api/registrations [event_id: evt_rave] · 201 CREATED");
+        } else {
+          isRaveReg = false;
+          raveBtn.innerHTML = "<span>Register</span><span class='material-symbols-outlined text-[14px]'>arrow_forward</span>";
+          raveBtn.classList.replace('bg-tertiary', 'bg-primary');
+          raveBtn.classList.replace('text-on-tertiary', 'text-on-primary');
+          raveQuota.textContent = "450 / 500";
+          raveProgress.style.width = "90%";
+          currentPassCount -= 1;
+          userBadgeCount.textContent = currentPassCount.toString();
+          triggerToast("Entry Withdrawn", "DELETE /api/registrations [event_id: evt_rave] · 204 NO_CONTENT");
+        }
+      });
+    }
+
+    // RoboWars Interaction
+    if (roboBtn) {
+      let isRoboReg = false;
+      roboBtn.addEventListener('click', () => {
+        if (!isRoboReg) {
+          isRoboReg = true;
+          roboBtn.innerHTML = "<span>Secured</span><span class='material-symbols-outlined text-[14px]'>check</span>";
+          roboBtn.classList.replace('bg-primary', 'bg-tertiary');
+          roboBtn.classList.replace('text-on-primary', 'text-on-tertiary');
+          roboQuota.textContent = "81 / 100";
+          roboProgress.style.width = "81%";
+          currentPassCount += 1;
+          userBadgeCount.textContent = currentPassCount.toString();
+          triggerToast("RoboWars Ticket Allocated", "POST /api/registrations [event_id: evt_robo] · 201 CREATED");
+        } else {
+          isRoboReg = false;
+          roboBtn.innerHTML = "<span>Register</span><span class='material-symbols-outlined text-[14px]'>arrow_forward</span>";
+          roboBtn.classList.replace('bg-tertiary', 'bg-primary');
+          roboBtn.classList.replace('text-on-tertiary', 'text-on-primary');
+          roboQuota.textContent = "80 / 100";
+          roboProgress.style.width = "80%";
+          currentPassCount -= 1;
+          userBadgeCount.textContent = currentPassCount.toString();
+          triggerToast("RoboWars Pass Removed", "DELETE /api/registrations [event_id: evt_robo] · 204 NO_CONTENT");
+        }
+      });
+    }
+
+    // Waitlist Conflict Click Action
+    if (waitlistBtn) {
+      let onWaitlist = false;
+      waitlistBtn.addEventListener('click', () => {
+        if (!onWaitlist) {
+          onWaitlist = true;
+          waitlistText.textContent = "Position #4 Queued";
+          waitlistBtn.classList.replace('bg-surface-container-highest', 'bg-error-container/40');
+          waitlistBtn.classList.add('text-error');
+          triggerToast("Waitlist Conflict Queued", "HTTP 409 Handled -> POST /api/waitlists [pos: 4] · 202 ACCEPTED");
+        } else {
+          onWaitlist = false;
+          waitlistText.textContent = "Join Waitlist";
+          waitlistBtn.classList.replace('bg-error-container/40', 'bg-surface-container-highest');
+          waitlistBtn.classList.remove('text-error');
+          triggerToast("Waitlist Spot Forfeited", "DELETE /api/waitlists/usr_8b2c · 204 NO_CONTENT");
+        }
+      });
+    }
+
+    // Role Switcher Toggle feedback
+    const roleToggleBtn = document.getElementById('role-toggle-btn');
+    if (roleToggleBtn) {
+      roleToggleBtn.addEventListener('click', () => {
+        triggerToast("Role Context Swapped", "Changed context: ORGANIZER mode enabled (/api/host/events)");
+      });
+    }
+
+    const userInspectBtn = document.getElementById('user-inspect-btn');
+    if (userInspectBtn) {
+      userInspectBtn.addEventListener('click', () => {
+        triggerToast("Mock User Switched", "Active: usr_3a1b (Jordan L.) · Session regenerated");
+      });
+    }
+
+    // Dynamic Countdown timer tick
+    const countdownEl = document.getElementById('hack-countdown');
+    if (countdownEl) {
+      let seconds = 22;
+      let minutes = 14;
+      setInterval(() => {
+        seconds--;
+        if (seconds < 0) {
+          seconds = 59;
+          minutes--;
+        }
+        const sStr = seconds < 10 ? '0' + seconds : seconds;
+        const mStr = minutes < 10 ? '0' + minutes : minutes;
+        countdownEl.textContent = `03d : ${mStr}h : ${sStr}m`;
+      }, 1000);
+    }
+  })();
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface-container-lowest/85 backdrop-blur-xl shadow-[0_-4px_24px_rgba(0,0,0,0.5)]" data-active-classes="text-tertiary font-semibold"><div class="flex justify-around items-center h-16 px-space-xs max-w-lg mx-auto"><a aria-current="page" class="flex flex-col items-center justify-center gap-1 min-w-[44px] min-h-[44px] px-space-xs transition-colors text-tertiary font-semibold" data-path="explore-events" href="#"><span class="material-symbols-outlined text-[20px]">explore</span><span class="font-label-sm text-label-sm tracking-tight">Explore</span></a><a class="flex flex-col items-center justify-center gap-1 min-w-[44px] min-h-[44px] px-space-xs text-on-surface-variant transition-colors hover:text-on-surface" data-path="my-registrations" href="#"><span class="material-symbols-outlined text-[20px]">confirmation_number</span><span class="font-label-sm text-label-sm tracking-tight">My Passes</span></a><a class="flex flex-col items-center justify-center gap-1 min-w-[44px] min-h-[44px] px-space-xs text-on-surface-variant transition-colors hover:text-on-surface" data-path="host-manage" href="#"><span class="material-symbols-outlined text-[20px]">dashboard_customize</span><span class="font-label-sm text-label-sm tracking-tight">Manage</span></a><a class="flex flex-col items-center justify-center gap-1 min-w-[44px] min-h-[44px] px-space-xs text-on-surface-variant transition-colors hover:text-on-surface" data-path="admin-reports" href="#"><span class="material-symbols-outlined text-[20px]">monitoring</span><span class="font-label-sm text-label-sm tracking-tight">Reports</span></a></div></nav></body></html>

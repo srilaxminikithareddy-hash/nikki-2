@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap');
+
+:root {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #dfe2ef;
+  background: #090d16;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  --surface: #090d16;
+  --panel: rgba(28, 31, 41, 0.82);
+  --panel-low: #181b25;
+  --panel-high: #262a34;
+  --text: #dfe2ef;
+  --muted: #c7c4d7;
+  --primary: #c0c1ff;
+  --secondary: #8b5cf6;
+  --tertiary: #4cd7f6;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+}
+
+* { box-sizing: border-box; }
+html { min-width: 320px; background: var(--surface); }
+body { margin: 0; min-width: 320px; min-height: 100vh; background: radial-gradient(circle at 12% 0%, rgba(99,102,241,.12), transparent 28%), radial-gradient(circle at 100% 68%, rgba(6,182,212,.08), transparent 30%), var(--surface); }
+button, input { font: inherit; }
+button { cursor: pointer; }
+#root { min-height: 100vh; }
